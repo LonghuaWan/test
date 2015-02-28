@@ -1,0 +1,41 @@
+<html>
+<head><title>Ordering notice</title></head>
+
+<body>
+
+<p>Dear {{ person_name }},</p>
+
+<p>Thanks for placing an order from {{ company }}. It's scheduled to
+ship on {{ ship_date|date:"F j, Y" }}.</p>
+
+<p>Here are the items you've ordered:</p>
+
+<ul>
+{% for item in item_list %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+
+{% if ordered_warranty %}
+<p>Your warranty information will be included in the packaging.</p>
+{% endif %}
+
+<p>Sincerely,<br />{{ company }}</p>
+
+</body>
+</html>
+
+
+
+两个大括号括起来的文字（例如 {{ person_name }} ）是 变量(variable) 。这意味着将按照给定的名字插入变量的值。如何指定变量的值呢？稍后就会说明。
+
+被大括号和百分号包围的文本(例如 {% if ordered_warranty %} )是 模板标签(template tag) 。标签(tag)定义比较明确，即：仅通知模板系统完成某些工作。
+3
+
+这个示例模板包含两个标签(tag): {% for item in item_list %} 标签(一个 for 标签)和 {% if ordered_warranty %} 标签 (一个 if 标签)。
+4
+
+for 标签用于构建简单的循环，允许你遍历循环中的每一项。 if 标签，正如你所料，是用来执行逻辑判断的。在这个例子中标签检测 ordered_warranty 变量值是否为 True 。如果是，模板系统将显示 {% if ordered_warranty %} 与 {% endif %} 之间的所有内容。如果不是模板系统不会显示它。它当然也支持 {% else %} 以及其他多种逻辑判断方式。
+1
+
+最后，这个模板的第二段落有一个 filter 过滤器的例子,它能让你用来转换变量的输出， 在这个例子中, {{ship_date|date:"F j, Y" }} 将变量 ship_date 用 date 过滤器来转换,转换的参数是 "F j, Y" . date 过滤器根据指定的参数进行格式输出。过滤器是用管道字符( | )来调用的,就和Unix管道一样.
