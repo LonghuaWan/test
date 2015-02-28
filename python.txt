@@ -1,3 +1,0 @@
-flask http://www.oschina.net/translate/the-flask-mega-tutorial-part-ii-templates
-django http://djangobook.py3k.cn/chapter04/
-http://werkzeug.pocoo.org/docs/0.10/tutorial/#step-0-a-basic-wsgi-introduction
