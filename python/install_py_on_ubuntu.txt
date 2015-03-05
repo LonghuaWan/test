@@ -1,0 +1,6 @@
+依赖　pip gcc
+sudo apt-get install python-pip python-dev git libxml2-dev libxslt-dev libmysqlclient-dev swig unzip libssl-dev
+
+sudo pip install Flask Flask-Assets Flask-Cache  Flask-Mail  Flask-SQLAlchemy  Flask-Script  Flask-WTF hiredis pytoxml rq_dashboard redis requests MySQL-python M2Crypto xlwt simplejson blinker rq pyquery thrift BeautifulSoup4 wtforms
+sudo pip install PIL --allow-external PIL --allow-unverified PIL
+sudo pip install pycrypto==2.6.1
